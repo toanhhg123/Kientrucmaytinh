@@ -1,0 +1,8 @@
+﻿  code_Birany.cpp
+C:\Users\Admin\source\repos\code_Birany\code_Birany\code_Birany.cpp(7,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Admin\source\repos\code_Birany\code_Birany\code_Birany.cpp(11,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Admin\source\repos\code_Birany\code_Birany\code_Birany.cpp(27,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Admin\source\repos\code_Birany\code_Birany\code_Birany.cpp(50,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Admin\source\repos\code_Birany\code_Birany\code_Birany.cpp(74,33): warning C4244: '+=': conversion from '__int64' to 'long', possible loss of data
+C:\Users\Admin\source\repos\code_Birany\code_Birany\code_Birany.cpp(85,20): warning C4018: '<': signed/unsigned mismatch
+  code_Birany.vcxproj -> C:\Users\Admin\source\repos\code_Birany\Debug\code_Birany.exe
