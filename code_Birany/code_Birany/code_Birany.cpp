@@ -1,22 +1,46 @@
 #include"DeTai_11.h"
 using namespace std;
-string chuanhoachuoi(string str)
+string chuanhoachuoi(string &str)
 {
-	int n = str.size();
-	
 	for (int i = 0; i < str.length(); i++)
 	{
 		while (str[i] == ' ')
 		{
-			strcpy(&str[i], &str[i + 1]);
+			str.erase(str.begin() + i);
 		}
 	}
 	return str;
+}
+bool KTchuoi(string str) 
+{
+	if (str[0] < 48 || str[0]>57)
+		return false;
+	if (str[str.length() - 1] < 48 || str.length() - 1 >57)
+		return false;
+	for (int i = 1; i < str.length(); i++)
+	{
+		if (str[i] == '*')
+		{
+			i++;
+			if (str[i] < 48 || str[i]>57)
+				return false;
+		}
+		else if (str[i] < 48 || str[i]>57)
+			return false;
+	}
+	return	true;
 }
 void input(string& str)
 {
 	cin.ignore();
 	getline(cin, str);
+	str=chuanhoachuoi(str);
+	while (KTchuoi(str)==false)
+	{
+		cout << "\nVui long nhap so khong dau: ";
+		getline(cin, str);
+		str = chuanhoachuoi(str);
+	}
 }
 
 long tichChuoi(string& str)
@@ -47,17 +71,32 @@ bool checkBirany(string& str)
 	str = chuanhoachuoi(str);
 	if (str.length() == 0)
 		return false;
-	for (int i = 0; i < str.length(); i++)
+	if (KTchuoi(str) == false)
+		return false;
+	for (int i = 1; i < str.length(); i++)
 	{
-		stringstream num;
-		num<< str.at(i);
-		int number;
-		num >> number;
-		if (number)
-			if (number < 0 || number> 1)
+		if (str[i] == '*')
+		{
+			i++;
+			if (str[i] < 48 || str[i]>49)
 				return false;
+		}
+		else if (str[i] < 48 || str[i]>49)
+			return false;
 	}
 	return true;
+}
+void inputBirany(string& str)
+{
+	cin.ignore();
+	getline(cin, str);
+	str = chuanhoachuoi(str);
+	while (checkBirany(str) == false)
+	{
+		cout << "\nVui long nhap dung chuoi so nhi phan: ";
+		getline(cin, str);
+		str = chuanhoachuoi(str);
+	}
 }
 long convertBirayToNumber(string& str)
 {
@@ -86,7 +125,7 @@ long tichchuoinhiphan(string& str)
 	{
 		if (i == str.length() - 1)
 		{
-			string binary = str.substr(index, str.length() - 1);
+			string binary = str.substr(index, str.length());
 			long number = convertBirayToNumber(binary);
 			if (number == -1)
 				return -1;
@@ -95,7 +134,7 @@ long tichchuoinhiphan(string& str)
 		}
 		else if (str.at(i) == '*')
 		{
-			string binary = str.substr(index, str.length() - 1);
+			string binary = str.substr(index,i);
 			long number = convertBirayToNumber(binary);
 			if (number == -1)
 				return -1;
@@ -143,7 +182,7 @@ void menu()
 			break;
 		case 2:
 			cout << "\nhap chuoi binary vd: (10001*11001) chu y chuoi binary toi da 10 ki tu: " << endl;
-			input(str);
+			inputBirany(str);
 			long num = tichchuoinhiphan(str);
 			if (num == -1)
 				cout << "\nNhap sai chuoi nhi phan";
@@ -157,5 +196,8 @@ void menu()
 int main()
 {
 	menu();
+	/*string str;
+	getline(cin,str);
+	cout << "\t" << tichchuoinhiphan(str);*/
 	return 0;
 }
