@@ -1,8 +1,0 @@
-﻿  code_Birany.cpp
-C:\Users\Admin\source\repos\code_Birany\code_Birany\code_Birany.cpp(5,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Admin\source\repos\code_Birany\code_Birany\code_Birany.cpp(20,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Admin\source\repos\code_Birany\code_Birany\code_Birany.cpp(51,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Admin\source\repos\code_Birany\code_Birany\code_Birany.cpp(76,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Admin\source\repos\code_Birany\code_Birany\code_Birany.cpp(113,33): warning C4244: '+=': conversion from '__int64' to 'long', possible loss of data
-C:\Users\Admin\source\repos\code_Birany\code_Birany\code_Birany.cpp(124,20): warning C4018: '<': signed/unsigned mismatch
-  code_Birany.vcxproj -> C:\Users\Admin\source\repos\code_Birany\Debug\code_Birany.exe

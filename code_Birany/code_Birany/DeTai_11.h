@@ -4,6 +4,13 @@
 #include<string.h>
 #include<sstream>
 #include<math.h>
+#include"design.h"
+using namespace std;
+void out_toando(int x, int y, string str)
+{
+	gotoXY(x, y);
+	cout << str;
+}
 long long power(long long a, long long b) {
 	long long result = 1;
 	for (int i = 1; i <= b; i++) {
