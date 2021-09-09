@@ -181,13 +181,14 @@ void menu()
 	toado t;
 	t.x = Tuong_Trai + 2;
 	t.y = Tuong_Giua+4;
-	noCursorType();
 	KhungGioiThieu();
 	khungtrai();
+	
 	KhungInfo();
 	Khunghuongdan();
 	while (luachon != 0)
 	{
+        ShowCur(0);
 		VeKhung();
 		out_toando(++t.x, ++t.y, "1. Tich so ---->  Nhi phan");
 		out_toando(t.x, ++t.y, "2. Nhan 2 chuoi nhi phan");
@@ -207,12 +208,15 @@ void menu()
 			tdx = Tuong_phai + 1;
 			_getch();
 			cls_sreen_left();
+			setTextColor(8);
+			out_toando((Tuong_phai + Tuong_Giua_sreen) / 2 - 8, (Tuong_tren + Tuong_Duoi_Header) / 2, "Tich so nhi phan");
+			setTextColor(11);
 			break;
 		}
 		case 2:
 		{
 			out_toando((Tuong_Giua_sreen + Bien_Ben) / 2 - 10, (Tuong_tren + Tuong_Duoi_Header) / 2, "Nhan 2 chuoi nhi phan");
-			setTextColor(6);
+			setTextColor(15);
 			int tdy = Tuong_tren + 4;
 			int tdx = Tuong_Giua_sreen + 1;
 			out_toando(tdx, tdy, "Nhap phep tinh 2 chuoi nhi phan: ");
@@ -226,6 +230,9 @@ void menu()
 			tdy = Tuong_tren + 4;
 			tdx = Tuong_Giua_sreen + 1;
 			_getch();
+			setTextColor(8);
+			out_toando((Tuong_Giua_sreen + Bien_Ben) / 2 - 10, (Tuong_tren + Tuong_Duoi_Header) / 2, "Nhan 2 chuoi nhi phan");
+			setTextColor(11);
 			cls_sreen_right();
 			break;
 		}

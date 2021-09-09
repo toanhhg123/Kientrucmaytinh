@@ -78,10 +78,10 @@ int batsukien(int &bien)
     toado T;
     T.x = Tuong_Trai + 1;
     T.y = Tuong_Giua + 5;
-
     out_toando(T.x, T.y, "->");
     while (true)
     {
+        ShowCur(0);
         toado cu = T;
         char key = _getch();
         if (key == 13)
